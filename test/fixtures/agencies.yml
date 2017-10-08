@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  type: 
+  'n': 
+  o_of_sales: 
+
+two:
+  name: MyString
+  type: 
+  'n': 
+  o_of_sales: 
