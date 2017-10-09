@@ -32,11 +32,15 @@ module RailsBusinessLogicRules
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
+    # initialize redis as a cache store
     config.cache_store = :redis_store, 'redis://localhost:6379/0/cache', {expires_in: 90.minutes}
 
     # initialize the rules engine and rules facts
     config.after_initialize do
-      setup_engine
+      # to skip this when the agencies table is still not migrated to the database
+      if ActiveRecord::Base.connection.table_exists? 'agencies'
+        setup_engine
+      end
     end
   end
 end
