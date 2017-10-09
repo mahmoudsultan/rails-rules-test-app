@@ -1,24 +1,8 @@
-# README
+# Dependencies:
+- Redis
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Make Sure that redis server is running before running rails s
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# EndPoints:
+    resource /agencies
+    /agencies/:id/features => fetch features of the specified agency
