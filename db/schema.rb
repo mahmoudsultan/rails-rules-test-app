@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 20171008212557) do
 
   create_table "agencies", force: :cascade do |t|
     t.string "name"
-    t.integer "type"
+    t.integer "agency_type"
     t.integer "no_of_sales"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

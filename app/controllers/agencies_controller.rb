@@ -1,10 +1,11 @@
 class AgenciesController < ApplicationController
+  include AgencyHelper
   before_action :set_agency, only: [:show, :update, :destroy]
 
   # GET /agencies
   def index
-    @agencies = Agency.all
-
+    # @agencies = Agency.all
+    @agencies = fetch_agencies
     render json: @agencies
   end
 
@@ -36,6 +37,11 @@ class AgenciesController < ApplicationController
   # DELETE /agencies/1
   def destroy
     @agency.destroy
+  end
+
+  def show_features
+    id = params[:id]
+    render json: $redis.get(id)
   end
 
   private
